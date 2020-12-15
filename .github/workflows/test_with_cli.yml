@@ -5,6 +5,7 @@ on:
 
 jobs:
   test_with_cli:
+    name: Test With CLI
     runs-on: ubuntu-18.04
 
     steps:
@@ -44,7 +45,7 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
       - name: Setup ssh
         run: |
-          ssh-keygen -f id_rsa -t rsa -N ''
+          ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y >/dev/null
       - name: Generate config
         env:
           AZURE_SUBSCRIPTION: ${{ secrets.AZURE_SUBSCRIPTION }}
