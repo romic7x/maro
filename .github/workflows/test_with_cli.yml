@@ -5,6 +5,7 @@ on:
 
 jobs:
   test_with_cli:
+    name: Test With CLI
     runs-on: ubuntu-18.04
 
     steps:
