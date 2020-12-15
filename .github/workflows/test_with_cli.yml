@@ -48,7 +48,7 @@ jobs:
 
       - name: Setup ssh
         run: |
-          ssh-keygen -f id_rsa -t rsa -N ''
+          ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa <<< y >/dev/null
 
       - name: Generate config
         env:
